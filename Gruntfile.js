@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     buddha_jameslin: {
       options:{
-        who:"alpaca",
+        who:"buddha",
         commentSymbol:"//"
       },
       dist:['test/fixtures/*.js']

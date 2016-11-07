@@ -37,56 +37,38 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.who
 Type: `String`
-Default value: `',  '`
+Default value: `buddha`
+###指定用佛祖还是神兽来保佑我们的代码永无bug
 
 A string value that is used to do something with whatever.
 
-#### options.punctuation
+#### options.commentSymbol
 Type: `String`
-Default value: `'.'`
-
+Default value: `//`
+###文件中拼接佛祖或神兽使用的注释符
 A string value that is used to do something else with whatever else.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
+在你指定的目录下的js文件都会加上佛祖或者神兽保佑的注释代码 
 grunt.initConfig({
   buddha_jameslin: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    options:{
+        who:"buddha",
+        commentSymbol:"//"
+      },
+    dist:['examples/*.js']
   },
 })
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  buddha_jameslin: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+2016-11-08&nbsp;&nbsp;&nbsp;v0.0.1&nbsp;&nbsp;&nbsp;init
 
 ## License
 Copyright (c) 2016 jameslin. Licensed under the MIT license.
