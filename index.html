@@ -71,18 +71,24 @@
 <a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
 
 <h4>
-<a id="optionsseparator" class="anchor" href="#optionsseparator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.separator</h4>
+<a id="optionswho" class="anchor" href="#optionswho" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.who</h4>
 
 <p>Type: <code>String</code>
-Default value: <code>',  '</code></p>
+Default value: <code>buddha</code></p>
+
+<h3>
+<a id="指定用佛祖还是神兽来保佑我们的代码永无bug" class="anchor" href="#%E6%8C%87%E5%AE%9A%E7%94%A8%E4%BD%9B%E7%A5%96%E8%BF%98%E6%98%AF%E7%A5%9E%E5%85%BD%E6%9D%A5%E4%BF%9D%E4%BD%91%E6%88%91%E4%BB%AC%E7%9A%84%E4%BB%A3%E7%A0%81%E6%B0%B8%E6%97%A0bug" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>指定用佛祖还是神兽来保佑我们的代码永无bug</h3>
 
 <p>A string value that is used to do something with whatever.</p>
 
 <h4>
-<a id="optionspunctuation" class="anchor" href="#optionspunctuation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.punctuation</h4>
+<a id="optionscommentsymbol" class="anchor" href="#optionscommentsymbol" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.commentSymbol</h4>
 
 <p>Type: <code>String</code>
-Default value: <code>'.'</code></p>
+Default value: <code>//</code></p>
+
+<h3>
+<a id="文件中拼接佛祖或神兽使用的注释符" class="anchor" href="#%E6%96%87%E4%BB%B6%E4%B8%AD%E6%8B%BC%E6%8E%A5%E4%BD%9B%E7%A5%96%E6%88%96%E7%A5%9E%E5%85%BD%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>文件中拼接佛祖或神兽使用的注释符</h3>
 
 <p>A string value that is used to do something else with whatever else.</p>
 
@@ -92,33 +98,16 @@ Default value: <code>'.'</code></p>
 <h4>
 <a id="default-options" class="anchor" href="#default-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Options</h4>
 
-<p>In this example, the default options are used to do something with whatever. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result would be <code>Testing, 1 2 3.</code></p>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
-  buddha_jameslin<span class="pl-k">:</span> {
-    options<span class="pl-k">:</span> {},
-    files<span class="pl-k">:</span> {
-      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
-    },
+<p>在你指定的目录下的js文件都会加上佛祖或者神兽保佑的注释代码 
+grunt.initConfig({
+  buddha_jameslin: {
+    options:{
+        who:"buddha",
+        commentSymbol:"//"
+      },
+    dist:['examples/*.js']
   },
-})</pre></div>
-
-<h4>
-<a id="custom-options" class="anchor" href="#custom-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Options</h4>
-
-<p>In this example, custom options are used to do something else with whatever else. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result in this case would be <code>Testing: 1 2 3 !!!</code></p>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
-  buddha_jameslin<span class="pl-k">:</span> {
-    options<span class="pl-k">:</span> {
-      separator<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>: <span class="pl-pds">'</span></span>,
-      punctuation<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span> !!!<span class="pl-pds">'</span></span>,
-    },
-    files<span class="pl-k">:</span> {
-      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
-    },
-  },
-})</pre></div>
+})</p>
 
 <h2>
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
@@ -128,7 +117,7 @@ Default value: <code>'.'</code></p>
 <h2>
 <a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release History</h2>
 
-<p><em>(Nothing yet)</em></p>
+<p>2016-11-08   v0.0.1   init</p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
